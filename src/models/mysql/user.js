@@ -57,7 +57,7 @@ export default class UserModel {
     if (!user.verifyPassword(password)) return { error: true, status: 404, message: 'Incorrect credentials' }
 
     // generar token JWT
-    const jwt = tokenJWT({ id: user.id, username: user.username })
+    const jwt = tokenJWT({ id: user.id, username: user.userName })
 
     return { error: false, message: 'Successful login', token: jwt }
   }
